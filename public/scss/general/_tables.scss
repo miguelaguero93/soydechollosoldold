@@ -1,0 +1,140 @@
+//
+// Basic table
+//
+
+.table {
+  background-color: $table-bg;
+  color: $table-color;
+  width: 100%;
+
+  th,
+  td {
+    .child-toggle {
+      cursor: pointer;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    padding: $table-cell-padding;
+    vertical-align: top;
+
+    &:first-child {
+      padding-left: 15px;
+    }
+
+    &:last-child {
+      padding-right: 15px;
+    }
+  }
+
+  thead {
+    th {
+      background-color: $gray-600;
+      color: $gray-900;
+      font-weight: $font-weight-normal;
+      padding: 16px 10px;
+      vertical-align: bottom;
+      white-space: nowrap;
+    }
+  }
+
+  tbody {
+    tr {
+      &.odd {
+        background-color: $gray-100;
+      }
+
+      &.resume {
+        td {
+          background-color: $gray-200;
+          font-size: 15px;
+        }
+      }
+
+      &.child {
+        background-color: $white;
+        box-shadow: inset 0 7px 7px -7px rgba($black, 0.1), inset 0 -7px 7px -7px rgba($black, 0.1);
+        display: none;
+
+        &.active {
+          display: table-row;
+        }
+      }
+    }
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tfoot {
+    background-color: $gray-200;
+
+    .total-text {
+      font-size: 13px;
+      vertical-align: inherit;
+    }
+
+    .total-value {
+      font-size: 23px;
+      font-weight: $font-weight-light;
+      text-align: right;
+    }
+  }
+
+  &--nowrap {
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+
+  &--info {
+    background-color: $white;
+    border-radius: 5px;
+    overflow: hidden;
+
+    thead {
+      th {
+        background-color: $gray-100;
+        color: $white;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}
+
+.table-sm {
+  th,
+  td {
+    padding: $table-cell-padding-sm;
+  }
+}
+
+// Border versions
+.table-bordered {
+  border: $table-border-width solid $table-border-color;
+
+  th,
+  td {
+    border: $table-border-width solid $table-border-color;
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom-width: 2 * $table-border-width;
+    }
+  }
+}
+
+.table-borderless {
+  th,
+  td,
+  // sass-lint:disable-all
+  thead th,
+  // sass-lint:enable-all
+  tbody + tbody {
+    border: none;
+  }
+}

@@ -1,0 +1,9 @@
+@extends('layouts.main')
+@section('content')
+    @include('includes.navigation')
+    @include('user.profile.body')
+    @include('user.profile.delete_modal')
+@endsection
+@section('scripts')
+    @include('user.js.profile')
+@endsection

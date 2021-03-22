@@ -1,0 +1,110 @@
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: $headings-color;
+  font-family: $font-weight-semibold;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  margin-bottom: $headings-margin-bottom;
+}
+
+h1,
+.h1 {
+  @include media-breakpoint-down(md) {
+    font-size: 26px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 22px;
+  }
+
+  font-size: $h1-font-size;
+}
+
+h2,
+.h2 {
+  font-size: $h2-font-size;
+}
+
+h3,
+.h3 {
+  font-size: $h3-font-size;
+}
+
+h4,
+.h4 {
+  font-size: $h4-font-size;
+}
+
+h5,
+.h5 {
+  font-size: $h5-font-size;
+}
+
+h6,
+.h6 {
+  font-size: $h6-font-size;
+}
+
+// Horizontal rules
+hr {
+  border: none;
+  border-top: $hr-border-width solid $hr-border-color;
+  margin-bottom: $hr-margin-y;
+  margin-top: $hr-margin-y;
+}
+
+// Emphasis
+small,
+.small {
+  font-size: $small-font-size;
+  font-weight: $font-weight-normal;
+}
+
+mark,
+.mark {
+  background-color: $mark-bg;
+  padding: $mark-padding;
+}
+
+// Lists
+.list-unstyled {
+  @include list-unstyled;
+}
+
+.list-inline {
+  @include list-unstyled;
+}
+
+.list-inline-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $list-inline-padding;
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    
+    $font-start: 9;
+    $font-end: 90;
+    
+    @for $i from $font-start through $font-end {
+      .font#{$infix}-#{$i} {
+        font-size: #{$i * 1px} !important;
+      }
+    }
+  }
+}

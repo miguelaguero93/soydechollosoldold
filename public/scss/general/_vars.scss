@@ -1,0 +1,397 @@
+// Color system
+$white: #fff;
+$black: #000;
+
+$gray-100: #f2f2f2;
+$gray-150: #f2f3f6;
+$gray-200: #f4f4f6;
+$gray-300: #ddd;
+$gray-400: #EDEDF1;
+$gray-500: #5c5c5c;
+$gray-600: #CACFD3;
+$gray-700: #ecebeb;
+$gray-800: #333;
+$gray-900: #a8a8a8;
+$gray-990: #999;
+
+// sass-lint:disable-all
+$grays: ();
+$grays: map-merge(
+  (
+    '100': $gray-100,
+    '150': $gray-150,
+    '200': $gray-200,
+    '300': $gray-300,
+    '400': $gray-400,
+    '500': $gray-500,
+    '600': $gray-600,
+    '700': $gray-700,
+    '800': $gray-800,
+    '900': $gray-900,
+    '990': $gray-990
+  ),
+  $grays
+);
+// sass-lint:enable-all
+
+$red1: red;
+$red2: #ff4545;
+
+$blue1: #0795ff;
+$blue2: #0038aa;
+$blue3: #02277c;
+$blue4: #0135af;
+$blue5: #1754e0;
+$blue6: #00b6f7;
+$blue7: #223da1;
+
+$orange1: #ffa101;
+$orange2: #fec401;
+$orange3: #fe7800;
+
+$green1: #06ba43;
+$green2: #019200;
+$green3: #d9ffe6;
+$green4: #5bad4f;
+
+$yellow1: #fff8e5;
+$yellow2: #f5d983;
+
+$whatsapp: #00bd45;
+$telegram: #009cd4;
+$facebook: #00589f;
+$twitter: #00adf3;
+
+$lightblue: #c7cfdf;
+
+$transparent: transparent;
+
+// sass-lint:disable-all
+$colors: ();
+$colors: map-merge(
+  (
+    'red1': $red1,
+    'blue1': $blue1,
+    'blue2': $blue2,
+    'blue3': $blue3,
+    'blue4': $blue4,
+    'blue5': $blue5,
+    'blue6': $blue6,
+    'blue7': $blue7,
+    'orange1': $orange1,
+    'orange2': $orange2,
+    'orange3': $orange3,
+    'green1': $green1,
+    'green2': $green2,
+    'green3': $green3,
+    'green4': $green4,
+    'yellow1': $yellow1,
+    'yellow2': $yellow2,
+    'white': $white,
+    'black': $black,
+    'facebook': $facebook,
+    'whatsapp': $whatsapp,
+    'telegram': $telegram,
+    'twitter': $twitter,
+    'lightblue': $lightblue,
+    'gray-light': $gray-100,
+    'gray': $gray-600,
+    'gray-dark': $gray-800
+  ),
+  $colors
+);
+// sass-lint:enable-all
+
+$primary: $blue1;
+$secondary: $gray-600;
+$success: $blue1;
+$info: $gray-600;
+$warning: $gray-600;
+$danger: $red1;
+$light: $gray-100;
+$dark: $gray-800;
+
+// sass-lint:disable-all
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'light': $white,
+    'dark': $dark
+  ),
+  $theme-colors
+);
+// sass-lint:enable-all
+
+// Options
+$enable-gradients: true;
+$enable-deprecation-messages: true;
+
+// Spacing
+$spacer: 10px;
+$spacers: ();
+// sass-lint:disable-all
+$spacers: map-merge(
+  (
+    0: 0,
+    2: (
+      $spacer * 0.2
+    ),
+    3: (
+      $spacer * 0.3
+    ),
+    4: (
+      $spacer * 0.4
+    ),
+    5: (
+      $spacer * 0.5
+    ),
+    6: (
+      $spacer * 0.6
+    ),
+    7: (
+      $spacer * 0.7
+    ),
+    8: (
+      $spacer * 0.8
+    ),
+    9: (
+      $spacer * 0.9
+    ),
+    10: (
+      $spacer * 1
+    ),
+    11: (
+      $spacer * 1.1
+    ),
+    12: (
+      $spacer * 1.2
+    ),
+    13: (
+      $spacer * 1.3
+    ),
+    15: (
+      $spacer * 1.5
+    ),
+    20: (
+      $spacer * 2
+    ),
+    25: (
+      $spacer * 2.5
+    ),
+    30: (
+      $spacer * 3
+    ),
+    35: (
+      $spacer * 3.5
+    ),
+    40: (
+      $spacer * 4
+    ),
+    45: (
+      $spacer * 4.5
+    ),
+    50: (
+      $spacer * 5
+    ),
+    55: (
+      $spacer * 5.5
+    ),
+    60: (
+      $spacer * 6
+    ),
+    65: (
+      $spacer * 6.5
+    ),
+    70: (
+      $spacer * 7
+    ),
+    80: (
+      $spacer * 8
+    ),
+    85: (
+      $spacer * 8.5
+    ),
+    90: (
+      $spacer * 9
+    ),
+    100: (
+      $spacer * 10
+    ),
+    110: (
+      $spacer * 11
+    ),
+    120: (
+      $spacer * 12
+    ),
+    125: (
+      $spacer * 12.5
+    ),
+    130: (
+      $spacer * 13
+    ),
+    140: (
+      $spacer * 14
+    ),
+    150: (
+      $spacer * 15
+    ),
+    160: (
+      $spacer * 16
+    ),
+    170: (
+      $spacer * 17
+    ),
+    180: (
+      $spacer * 18
+    ),
+    190: (
+      $spacer * 19
+    ),
+    200: (
+      $spacer * 20
+    ),
+    220: (
+      $spacer * 22
+    ),
+    300: (
+      $spacer * 30
+    )
+  ),
+  $spacers
+);
+// sass-lint:enable-all
+
+$sizes: ();
+// sass-lint:disable-all
+$sizes: map-merge(
+  (
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto
+  ),
+  $sizes
+);
+// sass-lint:enable-all
+
+// Body
+$body-bg: $gray-400;
+$body-color: $gray-500;
+
+// Links
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
+$emphasized-link-hover-darken-percentage: 15%;
+
+// Paragraphs
+$paragraph-margin-bottom: 0.6rem;
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// Grid containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1290px
+);
+
+// Grid columns
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// Components
+$border-width: 1px;
+$border-color: $gray-700;
+
+$border-radius: 0.40rem;
+$border-radius-lg: 0.3rem;
+$border-radius-sm: 0.2rem;
+
+$rounded-pill: 50rem;
+
+$path: '../fonts/';
+$font-family: 'AcuminProRegular';
+$font-family-base: $font-family, sans-serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+$font-size-base: 14px;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 'AcuminProRegular';
+$font-weight-normal: 'AcuminProRegular';
+$font-weight-semibold: 'AcuminProBold';
+$font-weight-bold: 'AcuminProBold';
+$font-weight-bolder: 700;
+
+$font-weight-base: 400;
+$line-height-base: 1.4;
+
+$h1-font-size: 70px;
+$h2-font-size: 50px;
+$h3-font-size: 30px;
+$h4-font-size: 18px;
+$h5-font-size: 15px;
+$h6-font-size: $font-size-base;
+
+$headings-margin-bottom: $spacer;
+$headings-font-weight: inherit;
+$headings-line-height: 1.1;
+$headings-color: $blue1;
+
+$small-font-size: 80%;
+
+$text-muted: $gray-600;
+
+$hr-border-color: rgba($black, 0.1);
+$hr-border-width: $border-width;
+
+$dt-font-weight: $font-weight-bold;
+
+$list-inline-padding: 0.5rem;
+
+$mark-padding: 0.2em;
+$mark-bg: #fcf8e3;
+
+$hr-margin-y: $spacer;
+
+// Tables
+$table-cell-padding: 0.75rem 10px;
+$table-cell-padding-sm: 0.3rem;
+
+$table-color: $body-color;
+$table-bg: null;
+$table-accent-bg: rgba($black, 0.05);
+
+$table-border-width: $border-width;
+$table-border-color: $border-color;
+
+$table-striped-order: odd;
+
+$table-caption-color: $text-muted;
+
+// Forms
+$label-margin-bottom: 0.5rem;
+
+// Utilities
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex;
+$overflows: auto, hidden, visible;
+$positions: static, relative, absolute, fixed, sticky;
+$cursors: pointer, not-allowed, none, move;
+$medidas: 40, 50, 60, 70, 80, 90, 100, 150, 200, 225, 240, 250, 300, 350, 400, 450, 500;

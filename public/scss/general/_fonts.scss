@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'AcuminProRegular';
+  src: url('../fonts/AcuminPro-Regular.eot');
+  src: url('../fonts/AcuminPro-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/AcuminPro-Regular.woff2') format('woff2'),
+      url('../fonts/AcuminPro-Regular.woff') format('woff'),
+      url('../fonts/AcuminPro-Regular.ttf') format('truetype'),
+      url('../fonts/AcuminPro-Regular.svg#AcuminProRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AcuminProBold';
+  src: url('../fonts/AcuminPro-Bold.eot');
+  src: url('../fonts/AcuminPro-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/AcuminPro-Bold.woff2') format('woff2'),
+      url('../fonts/AcuminPro-Bold.woff') format('woff'),
+      url('../fonts/AcuminPro-Bold.ttf') format('truetype'),
+      url('../fonts/AcuminPro-Bold.svg#AcuminProBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}

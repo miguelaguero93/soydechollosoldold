@@ -1,0 +1,9 @@
+@extends('layouts.main')
+@section('content')
+  	@include('includes/navigation')
+  	@include('avisador/body')
+@endsection
+@section('scripts')
+@include('common.js.favorite_mixin')
+@include('user.js.notifications')
+@endsection

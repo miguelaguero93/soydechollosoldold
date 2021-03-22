@@ -1,0 +1,11 @@
+@extends('layouts.main')
+@section('content')
+  @include('includes.breadcrumbs')
+  @include('events.form')
+@endsection
+@section('scripts')
+@include('common.js.helpers')
+@include('events.js.create')
+@include('add.js.quill')
+@include('add.js.dates')
+@endsection

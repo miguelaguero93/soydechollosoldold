@@ -1,0 +1,10 @@
+// CSS image replacement
+@mixin text-hide($ignore-warning: false) {
+  @include deprecate('`text-hide()`', 'v4.1.0', 'v5', $ignore-warning);
+
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  font: 0 / 0;
+  text-shadow: none;
+}

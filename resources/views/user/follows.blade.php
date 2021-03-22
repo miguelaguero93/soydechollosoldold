@@ -1,0 +1,9 @@
+@extends('layouts.main')
+@section('content')
+    @include('includes.navigation')
+    @include('user.profile.follows')
+@endsection
+@section('scripts')
+	@include('common.js.helpers')
+    @include('user.js.follows')
+@endsection

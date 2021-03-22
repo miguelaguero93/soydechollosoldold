@@ -1,0 +1,136 @@
+//
+// Text
+//
+
+// Alignment
+// Transformation
+// Weight and italics
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .text#{$infix}-inherit {
+      font-family: inherit !important;
+    }
+
+    .text#{$infix}-monospace {
+      font-family: $font-family-monospace !important;
+    }
+
+    .text#{$infix}-justify {
+      text-align: justify !important;
+    }
+
+    .text#{$infix}-wrap {
+      white-space: normal !important;
+    }
+
+    .text#{$infix}-nowrap {
+      white-space: nowrap !important;
+    }
+
+    .text#{$infix}-truncate {
+      @include text-truncate;
+    }
+
+    .text#{$infix}-left {
+      text-align: left !important;
+    }
+
+    .text#{$infix}-right {
+      text-align: right !important;
+    }
+
+    .text#{$infix}-center {
+      text-align: center !important;
+    }
+
+    .text#{$infix}-lowercase {
+      text-transform: lowercase !important;
+    }
+
+    .text#{$infix}-uppercase {
+      text-transform: uppercase !important;
+    }
+
+    .text#{$infix}-capitalize {
+      text-transform: capitalize !important;
+    }
+
+    .text#{$infix}-through {
+      text-decoration: line-through;
+    }
+
+    .font#{$infix}-light {
+      font-weight: $font-weight-light !important;
+    }
+
+    .font#{$infix}-lighter {
+      font-weight: $font-weight-lighter !important;
+    }
+
+    .font#{$infix}-normal {
+      font-family: $font-weight-normal !important;
+    }
+
+    .font#{$infix}-medium {
+      font-weight: $font-weight-semibold !important;
+    }
+
+    .font#{$infix}-bold {
+      font-family: $font-weight-bold !important;
+    }
+
+    .font#{$infix}-bolder {
+      font-weight: $font-weight-bolder !important;
+    }
+
+    .font#{$infix}-italic {
+      font-style: italic !important;
+    }
+  }
+}
+
+// Contextual colors
+@each $color, $value in $theme-colors {
+  @include text-emphasis-variant('.text-#{$color}', $value);
+}
+
+@each $color, $value in $colors {
+  @include text-emphasis-variant('.text-#{$color}', $value);
+}
+
+.text-body {
+  color: $body-color !important;
+}
+
+.text-muted {
+  color: $text-muted !important;
+}
+
+.text-black-50 {
+  color: rgba($black, 0.5) !important;
+}
+
+.text-white-50 {
+  color: rgba($white, 0.5) !important;
+}
+
+// Misc
+.text-hide {
+  @include text-hide($ignore-warning: true);
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.text-break {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important; // IE & < Edge 18
+}
+
+// Reset
+.text-reset {
+  color: inherit !important;
+}

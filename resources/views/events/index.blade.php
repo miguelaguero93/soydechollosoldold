@@ -1,0 +1,9 @@
+@extends('layouts.main')
+@section('content')
+  @include('includes/navigation')
+  @include('events.body')
+@endsection
+@section('scripts')
+@include('common.js.helpers')
+@include('events.js.index')
+@endsection

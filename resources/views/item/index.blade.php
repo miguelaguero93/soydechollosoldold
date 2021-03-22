@@ -1,0 +1,14 @@
+@extends('layouts.main')
+@section('content')
+  @include('includes.navigation')
+  @include('item.approve')
+  @include('item.body')
+  @include('item.modals.keywords')
+  @include('item.modals.report')
+@endsection
+@section('scripts')
+@include('common.js.helpers')
+@include('common.js.sidebar_mixin')
+@include('common.js.keywords_mixin')
+@include('item.js.index')
+@endsection

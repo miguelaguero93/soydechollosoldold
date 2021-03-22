@@ -1,0 +1,13 @@
+@extends('layouts.main')
+@section('content')
+	@include('includes.banner')
+  	@include('includes.navigation')
+	@include('index.vertical')
+@endsection
+@section('scripts')
+@include('common.js.helpers')
+@include('common.js.sidebar_mixin')
+@include('common.js.favorite_mixin')
+@include('index.js.index')
+@include('index.js.banners')
+@endsection

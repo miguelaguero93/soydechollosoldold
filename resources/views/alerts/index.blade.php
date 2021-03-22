@@ -1,0 +1,9 @@
+@extends('layouts.main')
+@section('content')
+  	@include('includes.navigation')
+  	@include('alerts.body')
+@endsection
+@section('scripts')
+@include('common.js.keywords_mixin')
+@include('alerts.js.index')
+@endsection

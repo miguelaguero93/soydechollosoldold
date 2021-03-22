@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-includes/
+Disallow: /xmlrpc.php
+Disallow: /feed/
+Disallow: /trackback/ 
+Disallow: /?s=
+Disallow: /search
+Disallow: /aviso-legal/
+Disallow: /politica-privacidad/
+Disallow: /politica-cookies/
+Disallow: /dev7/
+Disallow: /BACKUP_NUEVA/
+Allow: /*.js$
+Allow: /*.css$
+Sitemap: https://soydechollos.com/sitemap.xml

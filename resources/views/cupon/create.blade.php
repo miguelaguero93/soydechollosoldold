@@ -1,0 +1,13 @@
+@extends('layouts.main')
+@section('content')
+  @include('includes.breadcrumbs')
+  @include('cupon.form')
+@endsection
+@section('scripts')
+@include('add.js.editor')
+@include('cupon.js.selectors')
+@include('common.js.helpers')
+@include('common.js.create')
+@include('cupon.js.create')
+@include('add.js.dates')
+@endsection

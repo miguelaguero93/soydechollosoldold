@@ -1,0 +1,13 @@
+// Responsive images
+.img-fluid {
+  @include img-fluid;
+}
+
+.image-bg {
+  background-color: transparent;
+  background-position: top left;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  height: 179px;
+  overflow: hidden;
+}

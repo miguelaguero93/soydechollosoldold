@@ -1,0 +1,190 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $prop, $abbrev in (width: w) {
+  
+      $width-start: 1;
+      $width-end: 20;
+      
+      @for $i from $width-start through $width-end {
+        $number: 5 * $i;
+        
+        .#{$abbrev}#{$infix}-#{$number} {
+          #{$prop}: #{$number * 1%} !important;
+        }
+      }
+
+      .#{$abbrev}#{$infix}-auto {
+        #{$prop}: auto !important;
+      }
+    }
+  }
+}
+
+.w {
+  &-min {
+    &-px {
+      &-180 {
+        min-width: 180px;
+        flex-shrink: 0;
+      }
+
+      &-270 {
+        min-width: 270px;
+      }
+    }
+  }
+
+  &-max {
+    &-px {
+      &-300 {
+        max-width: 300px;
+      }
+
+      &-400 {
+        max-width: 400px;
+      }
+
+      &-sm {
+        &-400 {
+          @include media-breakpoint-up(sm) {
+            max-width: 400px;
+          }
+        }
+      }
+    }
+  }
+
+  &-px {
+    &-1 {
+      width: 1px;
+      flex-shrink: 0;
+    }
+
+    &-35 {
+      width: 35px;
+      flex-shrink: 0;
+    }
+
+    &-75 {
+      width: 75px;
+      flex-shrink: 0;
+    }
+
+    &-100 {
+      width: 100px;
+      flex-shrink: 0;
+    }
+
+    &-120 {
+      width: 120px;
+      flex-shrink: 0;
+    }
+
+    &-130 {
+      width: 130px;
+      flex-shrink: 0;
+    }
+
+    &-160 {
+      width: 160px;
+      flex-shrink: 0;
+    }
+
+    &-lg {
+      &-160 {
+        @include media-breakpoint-up(lg) {
+          width: 160px;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &-170 {
+      width: 170px;
+      flex-shrink: 0;
+    }
+
+    &-180 {
+      width: 180px;
+      flex-shrink: 0;
+    }
+
+    &-200 {
+      width: 200px;
+      flex-shrink: 0;
+    }
+
+    &-210 {
+      width: 210px;
+      flex-shrink: 0;
+    }
+
+    &-220 {
+      width: 220px;
+      flex-shrink: 0;
+    }
+
+    &-230 {
+      width: 230px;
+      flex-shrink: 0;
+    }
+
+    &-lg {
+      &-250 {
+        @include media-breakpoint-up(lg) {
+          width: 250px;
+          flex-shrink: 0;
+        }
+      }
+    }
+    
+    &-xl {
+      &-250 {
+        @include media-breakpoint-up(xl) {
+          width: 250px;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &-md {
+      &-300 {
+        @include media-breakpoint-up(md) {
+          width: 300px;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &-lg {
+      &-300 {
+        @include media-breakpoint-up(lg) {
+          width: 300px;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &-lg {
+      &-390 {
+        @include media-breakpoint-up(lg) {
+          width: 390px;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &-400 {
+      width: 400px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.w-cal-xl-250 {
+  @include media-breakpoint-up(xl) {
+    width: calc(100% - 250px);
+  }
+}

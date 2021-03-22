@@ -1,0 +1,15 @@
+@each $color, $value in $colors {
+  .color-#{$color} {
+    color: $value;
+  }
+}
+
+@each $gray, $value in $grays {
+  .color-gray-#{$gray} {
+    color: $value;
+  }
+}
+
+.color-primary {
+  color: $blue1;
+}
