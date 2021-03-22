@@ -34,7 +34,7 @@
   <link rel="preload" src="{{asset('/css/hover-min.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" src="asset('/js/snackbar/snackbar.min.css')" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" src="{{asset('/js/snackbar/snackbar.min.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" src="{{asset('/fontawesome/css/all.min.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <meta name="google-signin-client_id" content="524824199271-9e73sa0qrj6s3b9gsu5jii3eua7tl8n7.apps.googleusercontent.com">
