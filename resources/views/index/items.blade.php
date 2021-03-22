@@ -184,7 +184,7 @@
       </div>
   </div>
   <div v-show="loading" class="text-center">
-    <img src="{{public_path('/images/svgs/loader.svg')}}">
+    <img src="{{asset('/images/svgs/loader.svg')}}">
   </div>
   @include('index.paginator')
 </div>

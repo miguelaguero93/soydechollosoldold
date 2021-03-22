@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 d-flex align-items-center mb-20 mb-lg-0">
-          <img src="/images/footer.png" class="mx-auto mx-lg-0" alt="">
+          <img src="{{asset('/images/footer.png')}}" class="mx-auto mx-lg-0" alt="">
         </div>
         <div class="col-lg-4 color-gray-100 text-center text-lg-left mb-20 mb-lg-0">
           <h3 class="font-22 color-white font-normal mb-20">
