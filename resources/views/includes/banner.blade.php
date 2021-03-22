@@ -3,7 +3,7 @@
 	    <div class="container">
 	      <div class="wrap">
 			<a href="{{$banner->link}}">	
-	        	<img src="/storage/{{$banner->image}}" alt="{{$banner->name}}">
+	        	<img src="{{public_path('/storage/'.$banner->image)}}" alt="{{$banner->name}}">
 			</a>
 	      </div>
 	      <div class="icon"><i class="fas fa-times font-20" aria-hidden="true"></i></div>
