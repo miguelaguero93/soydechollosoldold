@@ -45,57 +45,57 @@
           @if(isset($store) && $store != 0)
             <div class="ml-25 nav_link">
               <a href="/tienda/{{$store_object->slug}}/populares" class="d-flex align-items-center color-gray-500 link-none">
-                <img width="26" src="{{asset('/public/images/svgs/medal.svg')}}">
+                <img width="26" src="{{asset('/images/svgs/medal.svg')}}">
                 <span class="ml-10 font-16">Populares</span>
               </a>
             </div>
             <div class="ml-25 nav_link">
               <a href="/tienda/{{$store_object->slug}}/nuevos" class="d-flex align-items-center color-gray-500 link-none">
-                <img width="26" src="{{asset('/public/images/svgs/new.svg')}}">
+                <img width="26" src="{{asset('/images/svgs/new.svg')}}">
                 <span class="ml-10 font-16">Nuevos</span>
               </a>
             </div>
             <div class="ml-25 nav_link">
               <a href="/tienda/{{$store_object->slug}}/comentados" class="d-flex align-items-center color-gray-500 link-none">
-                <img width="26" src="{{asset('/public/images/svgs/comment.svg')}}">
+                <img width="26" src="{{asset('/images/svgs/comment.svg')}}">
                 <span class="ml-10 font-16">Comentados</span>
               </a>
             </div>
           @elseif(isset($category_id) && $category_id >0)
             <div class="ml-25 nav_link">
               <a href="/categoria/{{$store_object->slug}}/populares" class="d-flex align-items-center color-gray-500 link-none">
-                <img width="26" src="{{asset('/public/images/svgs/medal.svg')}}">
+                <img width="26" src="{{asset('/images/svgs/medal.svg')}}">
                 <span class="ml-10 font-16">Populares</span>
               </a>
             </div>
             <div class="ml-25 nav_link">
               <a href="/categoria/{{$store_object->slug}}/nuevos" class="d-flex align-items-center color-gray-500 link-none">
-                <img width="26" src="{{asset('/public/images/svgs/new.svg')}}">
+                <img width="26" src="{{asset('/images/svgs/new.svg')}}">
                 <span class="ml-10 font-16">Nuevos</span>
               </a>
             </div>
             <div class="ml-25 nav_link">
               <a href="/categoria/{{$store_object->slug}}/comentados" class="d-flex align-items-center color-gray-500 link-none">
-                <img width="26" src="{{asset('/public/images/svgs/comment.svg')}}">
+                <img width="26" src="{{asset('/images/svgs/comment.svg')}}">
                 <span class="ml-10 font-16">Comentados</span>
               </a>
             </div>
           @else
             <div class="ml-25 nav_link">
               <a href="/populares" class="d-flex align-items-center color-gray-500 link-none">
-                <img width="26" src="{{asset('/public/images/svgs/medal.svg')}}">
+                <img width="26" src="{{asset('/images/svgs/medal.svg')}}">
                 <span class="ml-10 font-16">Populares</span>
               </a>
             </div>
             <div class="ml-25 nav_link">
               <a href="/nuevos" class="d-flex align-items-center color-gray-500 link-none">
-                <img width="26" src="{{asset('/public/images/svgs/new.svg')}}">
+                <img width="26" src="{{asset('/images/svgs/new.svg')}}">
                 <span class="ml-10 font-16">Nuevos</span>
               </a>
             </div>
             <div class="ml-25 nav_link">
               <a href="/comentados" class="d-flex align-items-center color-gray-500 link-none">
-                <img width="26" src="{{asset('/public/images/svgs/comment.svg')}}">
+                <img width="26" src="{{asset('/images/svgs/comment.svg')}}">
                 <span class="ml-10 font-16">Comentados</span>
               </a>
             </div>
