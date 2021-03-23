@@ -89,8 +89,8 @@ class CholloController extends Controller
                     $content = file_get_contents($img->getRealPath());
                     $filename = 'oferta/'.$item->slug.'.'.$img->extension();
                     Storage::disk('public')->put($filename, $content);
-                    $item->image = env('APP_URL').'/storage/'.$filename;
-                    $item->image_small = env('APP_URL').'/storage/'.$filename;
+                    $item->image = env('APP_URL').'/public/storage/'.$filename;
+                    $item->image_small = env('APP_URL').'/public/storage/'.$filename;
                     $item->save();
                 } else {
                     $item->image = null;
@@ -271,7 +271,7 @@ class CholloController extends Controller
         if (sizeof($matches[0]) > 0) {
             foreach ($matches[0] as $key => $value) {
                 $path = 'https://soydechollos.com/';
-                $name = 'storage/oferta/'.$slug.'_'.$key.'.jpg';
+                $name = 'public/storage/oferta/'.$slug.'_'.$key.'.jpg';
                 $explode = explode(';', $value);
                 $info_image = $explode[0];
                 $data_image = $explode[1];
@@ -451,7 +451,7 @@ class CholloController extends Controller
                 return [$image, null];
             }
 
-            $path = 'storage/oferta/'.$slug;
+            $path = 'public/storage/oferta/'.$slug;
 
             $wa = Image::make($image);
             $width = $wa->width();
@@ -475,12 +475,12 @@ class CholloController extends Controller
             $path_info = pathinfo($image);
             $extensions = ['jpg', 'JPG', 'png', 'PNG', 'jpeg', 'JPEG', 'webp'];
             $download_image = false;
-            $path = 'storage/oferta/'.$slug;
+            $path = 'public/storage/oferta/'.$slug;
 
             if (isset($path_info['extension']) && in_array($path_info['extension'], $extensions)) {
                 $ext = $path_info['extension'];
                 $ext = strtok($ext, '?');
-                $path = 'storage/oferta/'.$slug.'.'.$ext;
+                $path = 'public/storage/oferta/'.$slug.'.'.$ext;
 
                 $download_image = $this->save_image($image, $path);
             } else {
