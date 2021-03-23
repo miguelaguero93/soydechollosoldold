@@ -11,7 +11,7 @@
                   <a href="/tienda/{{$item->slug}}" class="no_link" style="margin: auto">
                     <div class="text-center">
                       @if(!is_null($item->image))
-                        <img src="{{'storage/'.$item->image}}" class="d-block w-100" alt="">
+                        <img src="{{asset('storage/'.$item->image)}}" class="d-block w-100" alt="">
                       @else
                         <h3>{{$item->visible_name}}</h3>
                       @endif
