@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Chollo;
+use App\User;
 use Auth;
 use Carbon\Carbon;
 use DB;
@@ -163,6 +164,33 @@ class CategoryController extends Controller
                 $chollo->image = $url1;
                 $chollo->image_small = $url2;
                 $chollo->save();
+            }
+
+        }
+
+        echo "Success";
+    }
+
+    public function fixuserimages(){
+
+
+        $users = User::all();
+
+
+        foreach ($users as $user){
+
+
+            $url1 = $user->avatar;
+
+
+            $result = strpos($url1,"https://soydechollos.com/");
+            if($result === false) {
+
+            }else{
+                $url1 = str_replace("https://soydechollos.com/", env('APP_URL')."public/", $url1);
+
+                $user->avatar = $url1;
+                $user->save();
             }
 
         }
