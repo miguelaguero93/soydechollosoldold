@@ -70,7 +70,7 @@ function insertBanners(){
 				}
 
 				if (banner_image.length) {
-					banner_content = '<div class="item item-design"><a href="'+app.ads[ad].link+'"><img src="/storage/'+banner_image+'" class="w-100 d-block" alt="'+app.ads[ad].name+'"></a></div>'
+					banner_content = '<div class="item item-design"><a href="'+app.ads[ad].link+'"><img src="{{asset("storage/")}}/'+banner_image+'" class="w-100 d-block" alt="'+app.ads[ad].name+'"></a></div>'
 					if (after_position >= 0) {
 						offer_items[after_position].insertAdjacentHTML('afterend',banner_content)
 					}else{
