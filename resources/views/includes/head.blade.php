@@ -2,6 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  @if(env('APP_ENV') != 'PRODUCTION')
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="googlebot" content="noindex,nofollow">
+  @endif
+
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="@if(isset($description)){{substr($description, 0, 152)}}@else{{setting('site.description')}}@endif">
@@ -24,19 +29,13 @@
   <meta name="twitter:image" content="@if(isset($image)){{$image}}@else{{env('APP_URL').'/storage/'.setting('site.image')}}@endif">
   <link rel="canonical" href="{{URL::current()}}">
   <title>@if(isset($title)){{$title}}@else{{setting('site.title')}}@endif</title>
-  <link rel="preload" src="{{asset('/fonts/AcuminPro-Regular.woff2')}}" as="font" crossorigin>
-  <link rel="preload" src="{{asset('/fonts/AcuminPro-Bold.woff2')}}" as="font" crossorigin>
-  <link rel="preload" src="{{asset('/fonts/icomoon.ttf')}}" as="font" crossorigin>
-  <link rel="preload" src="{{asset('/fontawesome/webfonts/fa-solid-900.woff2')}}" as="font" crossorigin>
-  <link rel="preload" src="{{asset('/fontawesome/webfonts/fa-regular-400.woff2')}}" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" src="{{asset('/fontawesome/webfonts/fa-brands-400.woff2')}}" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" src="{{asset('/css/main.min.css?v=7')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" src="{{asset('/css/hover-min.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="{{asset('/css/main.min.css?v=7')}}" as="style">
+  <link rel="stylesheet" href="{{asset('/css/hover-min.css')}}" as="style">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" src="asset('/js/snackbar/snackbar.min.css')" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{asset('/js/snackbar/snackbar.min.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" src="{{asset('/fontawesome/css/all.min.css')}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="{{asset('/fontawesome/css/all.min.css')}}" as="style" >
   <meta name="google-signin-client_id" content="524824199271-9e73sa0qrj6s3b9gsu5jii3eua7tl8n7.apps.googleusercontent.com">
 {{--  <script src="{{ asset('js/app.js') }}"></script>--}}
   <style type="text/css">

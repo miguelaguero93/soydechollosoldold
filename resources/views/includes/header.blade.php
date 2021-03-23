@@ -3,7 +3,7 @@
     <div class="d-flex w-100 h-px-70 align-items-center justify-content-between">
       <div class="d-none d-xl-block">
         <a href="/">
-          <img src="/images/logo.png" class="h-px-40" alt="Soy de chollos">
+          <img src="{{asset('/images/logo.png')}}" class="h-px-40" alt="Soy de chollos">
         </a>
       </div>
       <div class="d-flex align-items-center w-100 pr-md-20 pr-lg-50">
@@ -13,70 +13,13 @@
             Menu
           </div>
         </div>
-        <div class="d-flex align-items-center mr-md-30 w-100" id="search-element">
-          <form class="w-100 mb-0" action="/api/search" onsubmit="showBlanket()" autocomplete="off">
+        <div class="d-flex align-items-center mr-md-30 w-100">
+          <form class="w-100" action="/api/search" onsubmit="showBlanket()">
             <div class="search">
-              <input type="text" name="search" id="search_input" placeholder="Buscar producto" autocomplete="off">
+              <input type="text" name="search" placeholder="Buscar producto">
               <button>
-                <img class="spinner" src="/images/svgs/spinner-old.svg" hidden>
                 <i class="fas fa-search font-20 color-blue4"></i>
               </button>
-            </div>
-            <div class="after-search">
-              <div class="search-title">
-                <div class="flex-grow-1 search-only-chollos">
-                  <a class="search-chollos" onclick='goToOferts()'><i class="fas fa-search font-20"></i>Buscar solo Chollos</a>
-                </div>
-                
-              </div>
-              <div id="categories">
-                <div class="search-title">
-                  <div class="flex-grow-1">
-                    <h3 class="search-title-label">Categorías</h3>
-                  </div>
-                </div>
-                <ol class="search-ol">
-                </ol>
-                <div class="see-more-cat">
-                  <a class="search-link" onclick='getMoreCat()'>Ver más</a>
-                </div>
-              </div>
-              <div id="shops">
-                <div class="search-title">
-                  <div class="flex-grow-1">
-                    <h3 class="search-title-label">Tiendas</h3>
-                  </div>
-                  <div>
-                    <a class="search-link" href="/tiendas/">Ver todas</a>
-                  </div>
-                </div>
-                <ol class="search-ol">
-                </ol>
-              </div>
-              <div id="brands">
-                <div class="search-title">
-                  <div class="flex-grow-1">
-                    <h3 class="search-title-label">Marcas</h3>
-                  </div>
-                  <div>
-                    <a class="search-link" href="https://www.soydechollos.com/marcas/">Ver todas</a>
-                  </div>
-                </div>
-                <ol class="search-ol">
-                </ol>
-              </div>
-              <div id="chollosList">
-                <div class="search-title">
-                  <div class="flex-grow-1">
-                    <h3 class="search-title-label">Chollos</h3>
-                  </div>
-                  <div>
-                    <a class="search-link" onclick='goToOferts()'>Ver todos</a>
-                  </div>
-                </div>
-                <ol class="search-ol">
-                </ol>
-              </div>
             </div>
           </form>
         </div>
