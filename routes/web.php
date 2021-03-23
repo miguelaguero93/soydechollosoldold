@@ -30,6 +30,7 @@ Route::post('filter', 'HomeController@filter');
 Route::get('seleccionar', 'AddController@choose');
 
 Route::get('/fixproductimages', 'CategoryController@fixproductimages');
+Route::get('/fixuserimages', 'CategoryController@fixuserimages');
 
 Route::get('categorias', 'CategoryController@index');
 Route::get('categoria/{slug}', 'HomeController@category');
