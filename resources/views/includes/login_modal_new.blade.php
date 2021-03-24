@@ -2,7 +2,7 @@
     <div class="am-inside">
       <div class="am-left" id="login_gif">
         
-        <div class="px-3" style="position: absolute; top: 39px; text-align: center;"><img src="/images/logo.png" width="200px"></div>
+        <div class="px-3" style="position: absolute; top: 39px; text-align: center;"><img src="{{asset('/images/logo.png')}}" width="200px"></div>
         <div class="f-middle p-10">
           <span>Disfruta de las ventajas</span>
           <span>Recibe Alertas</span>
