@@ -7,7 +7,10 @@ Route::group(['prefix' => 'panel'], function () {
     Route::post('notifications/send', 'NotificationsController@sendmasive');
     Route::get('chollo/publish', 'CholloController@publish')->name('chollo.publish');
     Route::get('category/pool/{id}', 'CategoryController@pool')->name('category.pool');
+    Route::get('category/pending/pools','CategoryController@poolPending')->name('category.poolPendings');
+    Route::post('category/pending/pools/approve','CategoryController@approvePoolPending');
     Route::post('category/pool/{id}', 'CategoryController@poolSave');
+    Route::get('pool/words','CategoryController@poolWords')->name('category.poolWords');
     Route::post('chollo/dismiss', 'CholloController@dismiss');
     Route::post('category/single', 'CategoryController@poolSaveSingle');
     Route::post('brand/single', 'BrandController@poolSaveSingle');
@@ -85,6 +88,7 @@ Route::get('siguiendo/{id}/{name}', 'UserController@following');
 Route::get('estadisticas/{id}/{name}', 'UserController@statistics');
 Route::get('pagina/{slug}', 'HomeController@page');
 // New search on Demand
+Route::post('api/pool/add', 'CategoryController@addPoolWord');
 Route::post('api/user/store', 'UserController@save');
 Route::post('api/user/login', 'UserController@login');
 Route::post('api/chollo/vote', 'CholloController@vote');

@@ -34,27 +34,137 @@ var app = new Vue({
 			store_id: null,
 			updated_at: null,
 			available: null,
-			updated_at_time: '00:00'
+			updated_at_time: '00:00',
+            correct:0,
+            failed:0,
+            total:0,
+            multiple:0,
+            resultCategories:[]
 		},
 		mixins:[helpersMixin,createMixin],
 		methods:{
+
 			asignCategory(cats){
 				this.selected_category = this.categories.find(item => item.id == cats[0])
 				this.realCat = cats[1]
 			},
+
 			getCategory(){
 				let payload = {
 					name:this.name
-				}		
+				}
+				let _this = this;
+                this.resultCategories = [];
 				axios.post('/api/getcategory',payload).then(function(response){
-					if(typeof(response.data) == 'object'){
-						app.asignCategory(response.data)
-					}
+
+                    $('#categorysChollos').empty();
+
+                    let data = response.data;
+
+                    let count = data.length;
+
+                    _this.total = _this.total + 1;
+                    if(count > 0) {
+
+                        _this.correct = _this.correct + 1;
+
+
+                         if (count > 1) {
+
+
+                            var modal = document.getElementById("testModal");
+                            modal.style.display = "block";
+
+                            Object.entries(response.data).forEach(([key, value]) => {
+
+                                _this.resultCategories.push(value);
+                             // $('#modalCategories').append("<div class=\"col-4\"><a @click=\"selectCategory('"+value[3]+"','"+value[4]+"','"+value[0]+"','"+value[1]+"')\"><div class=\"tag\" style='font-size: 0.7rem;'><span><i class=\"fas fa-microchip\"></i></span> <span>" + value[3] + "</span></a></div></div>");
+
+                            });
+
+                        }else {
+
+
+
+                            /* app.asignCategory(response.data);*/
+
+                            Object.entries(response.data).forEach(([key, value]) => {
+
+                                let category = [value[0],value[1]];
+                                _this.asignCategory(category);
+                                Object.entries(value).forEach(([key2, value2]) => {
+
+                                    if (key2 != 0 && key2 != 1 && key2 != 2 && key2 != 4){
+                                        $('#categorysChollos').append("<div class=\"tag\"><span>" + value2 + "</span></div>");
+                                    }
+
+                                });
+                            });
+
+
+                        }
+                    }
+                    else{
+
+                        _this.failed = _this.failed + 1;
+                    }
+
+
 				}).catch(function(error){
 					console.log(error)
 					alert(error)
 				})
 			},
+            selectCategory(name,cleaned_word,parentCategory,category){
+
+               /* $('#modalMainCategory').empty().append("<div class=\"col-12 col-xl-3 col-lg-4 col-md-4\"><div class=\"tag\"><span>" + name + "</span></div></div> " +
+                    "<div class=\"col-12\">" +
+                    "<button  " +
+                    "</div> ");*/
+
+
+                if(confirm('¿Estás seguro que '+ name +' es la categoría?')){
+
+                    var modal = document.getElementById("testModal");
+                    modal.style.display = "none";
+                    let data = [parentCategory,category];
+                    app.asignCategory(data);
+
+                    let payload = {};
+                    payload.word = cleaned_word;
+                    payload.category_id = category;
+
+                    axios.post('/api/pool/add',payload).then(function(response){
+
+                    }).catch(function(error){
+                        console.log(error)
+                        alert(error)
+                    });
+
+                }
+
+
+
+            },
+            omitcategory(){
+                var modal = document.getElementById("testModal");
+                modal.style.display = "none";
+            },
+            corregirFallo(){
+
+			    this.correct = this.correct - 1;
+			    this.failed = this.failed + 1;
+
+            },
+
+            corregirMultiple(){
+
+			    this.failed = this.failed - 1;
+			    this.correct = this.correct + 1;
+
+			    this.multiple = this.multiple +1;
+
+            },
 
 			handleBlur(e) {
 		      this.getCategory()
@@ -63,14 +173,16 @@ var app = new Vue({
 			cancelCreation(){
 				window.location.href = '/'
 			},
+
 			continueCreation(){
 				this.existing = null
 				this.getImages(this.site_url)
 			},
+
 			uploadFromURL(){
-				console.log('here')
 				this.uploadingFromURL = !this.uploadingFromURL 
 			},
+
 			validate(){
 
 				this.description = tinymce.get("myTextarea").getContent();
@@ -146,6 +258,7 @@ var app = new Vue({
 				return true
 
 			},
+
 			submit(){
 				if (this.validate()) {
 					showBlanket()
@@ -245,8 +358,6 @@ var app = new Vue({
 					window.location.href = app.cholloLinkv2(res[1])
 				}
 			},
-			
-
 			removeTag(index){
 				this.keywords.split(index,1)
 			},
@@ -335,11 +446,13 @@ var app = new Vue({
 					this.avaiable_images = []			
 				}
 			},
+
 			unSelectAllImage(){
 				for(let image of this.avaiable_images){
 					image.selected = false
 				}
 			},
+
 			setMainImage(index){
 				this.unSelectAllImage()
 				if (this.avaiable_images.length) {
@@ -468,7 +581,8 @@ var app = new Vue({
 			},
 			keywords_input(value){
 				this.updateKeyWords(value)
-			}
+			},
+
 
 		},
 		computed: {
@@ -483,7 +597,7 @@ var app = new Vue({
 					}
 				}
 				return null
-			}
+			},
 		},
 		created(){
 			var time = new Date()
@@ -493,7 +607,7 @@ var app = new Vue({
 				this.updated_at_time = next
 			} 
 
-		}
+		},
 });
 
 @if(isset($item))
@@ -503,5 +617,7 @@ $(function(){
 	app.setData()
 })
 @endif
+
+
 
 </script>

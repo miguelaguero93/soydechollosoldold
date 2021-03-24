@@ -2,6 +2,66 @@
   <div class="bg-white p-20 px-lg-60 py-lg-50">
     <div class="row">
 
+      <div id="testModal" class="modal" onclick="closeModals(event)">
+        <div class="modal-content animate__animated animate__fadeIn">
+          <span class="close" onclick="closeModals(event)">&times;</span>
+          <div class="row" style="margin: 0">
+            <div class="col-12 text-center pt-20 pb-20">
+
+              <h4>Selecciona Categoría Principal</h4>
+
+
+            </div>
+            <div class="col-12 text-center pt-20 pb-20">
+              <div class="row justify-content-center" id="modalMainCategory">
+
+
+              </div>
+            </div>
+
+            <div class="col-12 text-center pt-20 pb-20">
+              <div class="row" id="modalCategories">
+                <div class="col-12 col-xl-3 col-lg-4 col-md-4" v-for="value in this.resultCategories">
+                  <a @click="selectCategory(value[3],value[4],value[0],value[1])">
+                    <div class="tag" style='font-size: 0.7rem;'><span></span> <span>@{{value[3]}}</span>
+                    </div>
+                  </a>
+                </div>
+
+
+                <div class="col-12 mt-4 text-center">
+                  <p>¿No es ningúna de las categorías que se muestran?</p>
+                    <div class="row justify-content-center align-content-center">
+                      <div class="col-12 col-xl-3 col-lg-4 col-md-4">
+                        <a @click="omitcategory()">
+                          <div class="tag" style='font-size: 0.7rem;'> <span>Ninguna de las indicadas</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+
+        {{--    <div class="col-12 text-center pt-20 pb-20">
+
+              <h4>Selecciona Categoría Secundaria</h4>
+
+
+            </div>
+            <div class="row" id="modalSecondaryCategory">
+
+
+            </div>
+            <div class="row" id="modalCategories2">
+
+
+            </div>--}}
+          </div>
+        </div>
+      </div>
+
       <div class="col-lg-8">
 
         <div class="mr-lg-50">
@@ -82,7 +142,7 @@
              <div class="col-12 col-md-9">
                <b><a :href="cholloLink(existing)" target="_blank">@{{ existing.name }}</a></b> <br>
                <span class="color-orange3 font-bold">@{{ existing.price | numberformat }}</span> -
-               Publicado el @{{ parsedTime(existing.updated_at) }}
+               Publicado el @{{ parsedTime(existing.created_at) }}
                <div class="text-right mt-15">
                  <button class="btn btn-white" style="display: inline-block" @click="cancelCreation">Cancelar</button>
                  <button class="btn" style="display: inline-block" @click="continueCreation()">No es el mismo, continuar</button>
@@ -103,7 +163,12 @@
           </div>
         
           <h2 class="font-19 color-blue2">Titulo del chollo</h2>
-          <div class="row">
+              <div class="row">
+
+                <div class="col-12 mb-10" id="categorysChollos">
+
+                </div>
+
             <div class="col-12 mb-10">
               <div class="input">
                 <input type="text" placeholder="Indica de qué producto o promocion se trata" maxlength="255" v-model="name"  v-on:blur="handleBlur">
