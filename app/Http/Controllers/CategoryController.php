@@ -721,9 +721,10 @@ class CategoryController extends Controller
             }
 
         }
-
+        $isRechecked = false;
         if(empty($results)){
 
+            $isRechecked = true;
             $results = self::recheck($reCheck, $categories);
 
             if(empty($results)) {
@@ -745,7 +746,8 @@ class CategoryController extends Controller
 
 
 
-        if (count($results) > 0 && count($results) < 3){
+
+        if (count($results) > 0 && count($results) < 4 && $isRechecked != true){
 
             $key = array_search(max(array_column($results,1)), array_column($results,1));
 

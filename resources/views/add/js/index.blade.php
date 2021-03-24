@@ -55,65 +55,69 @@ var app = new Vue({
 				}
 				let _this = this;
                 this.resultCategories = [];
-				axios.post('/api/getcategory',payload).then(function(response){
 
-                    $('#categorysChollos').empty();
+                if(this.name.length > 0){
+                    axios.post('/api/getcategory',payload).then(function(response){
 
-                    let data = response.data;
+                        $('#categorysChollos').empty();
 
-                    let count = data.length;
+                        let data = response.data;
 
-                    _this.total = _this.total + 1;
-                    if(count > 0) {
+                        let count = data.length;
 
-                        _this.correct = _this.correct + 1;
+                        _this.total = _this.total + 1;
+                        if(count > 0) {
 
-
-                         if (count > 1) {
-
-
-                            var modal = document.getElementById("testModal");
-                            modal.style.display = "block";
-
-                            Object.entries(response.data).forEach(([key, value]) => {
-
-                                _this.resultCategories.push(value);
-                             // $('#modalCategories').append("<div class=\"col-4\"><a @click=\"selectCategory('"+value[3]+"','"+value[4]+"','"+value[0]+"','"+value[1]+"')\"><div class=\"tag\" style='font-size: 0.7rem;'><span><i class=\"fas fa-microchip\"></i></span> <span>" + value[3] + "</span></a></div></div>");
-
-                            });
-
-                        }else {
+                            _this.correct = _this.correct + 1;
 
 
+                            if (count > 1) {
 
-                            /* app.asignCategory(response.data);*/
 
-                            Object.entries(response.data).forEach(([key, value]) => {
+                                var modal = document.getElementById("testModal");
+                                modal.style.display = "block";
 
-                                let category = [value[0],value[1]];
-                                _this.asignCategory(category);
-                                Object.entries(value).forEach(([key2, value2]) => {
+                                Object.entries(response.data).forEach(([key, value]) => {
 
-                                    if (key2 != 0 && key2 != 1 && key2 != 2 && key2 != 4){
-                                        $('#categorysChollos').append("<div class=\"tag\"><span>" + value2 + "</span></div>");
-                                    }
+                                    _this.resultCategories.push(value);
+                                    // $('#modalCategories').append("<div class=\"col-4\"><a @click=\"selectCategory('"+value[3]+"','"+value[4]+"','"+value[0]+"','"+value[1]+"')\"><div class=\"tag\" style='font-size: 0.7rem;'><span><i class=\"fas fa-microchip\"></i></span> <span>" + value[3] + "</span></a></div></div>");
 
                                 });
-                            });
+
+                            }else {
 
 
+
+                                /* app.asignCategory(response.data);*/
+
+                                Object.entries(response.data).forEach(([key, value]) => {
+
+                                    let category = [value[0],value[1]];
+                                    _this.asignCategory(category);
+                                    Object.entries(value).forEach(([key2, value2]) => {
+
+                                        if (key2 != 0 && key2 != 1 && key2 != 2 && key2 != 4){
+                                            $('#categorysChollos').append("<div class=\"tag\"><span>" + value2 + "</span></div>");
+                                        }
+
+                                    });
+                                });
+
+
+                            }
                         }
-                    }
-                    else{
+                        else{
 
-                        _this.failed = _this.failed + 1;
-                    }
+                            _this.failed = _this.failed + 1;
+                        }
 
 
-				}).catch(function(error){
-					console.log(error)
-					alert(error)
-				})
+                    }).catch(function(error){
+                        console.log(error)
+                        alert(error)
+                    })
+                }
+
 			},
             selectCategory(name,cleaned_word,parentCategory,category){
 
