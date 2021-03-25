@@ -15,7 +15,7 @@
       <div class="category-row">
         <div class="category-element" v-on:click="clickCategory(item)" v-for="(item,index) in categories_first" style="background-image: url(/images/backcat.jpg);">
             <div class="image-in-cat">
-                <img v-bind:src="[item.image == null ? 'https://soydechollos.com/public/storage/users/1552005727.png' : 'public/storage/' + item.image]">
+                <img v-bind:src="[item.image == null ? 'https://soydechollos.com/storage/users/1552005727.png' : 'storage/' + item.image]">
             </div>
             <div class="text-in-cat">
               @{{ item['name'] }} 
@@ -25,7 +25,7 @@
       <div class="category-row">
         <div class="category-element" v-on:click="clickCategory(item)"  v-for="(item,index) in categories_second" style="background-image: url(/images/backcat.jpg);">
             <div class="image-in-cat">
-                <img v-bind:src="[item.image == null ? 'https://soydechollos.com/public/storage/users/1552005727.png' : 'public/storage/' + item.image]">
+                <img v-bind:src="[item.image == null ? 'https://soydechollos.com/storage/users/1552005727.png' : 'storage/' + item.image]">
             </div>
             <div class="text-in-cat">
               @{{ item['name'] }} 
@@ -43,7 +43,7 @@
       <div class="category-row">
         <div class="category-element" v-on:click="clickCategory(itemIn)" v-for="(itemIn,indexIn) in item.son_first">
             <div class="image-in-cat">
-                <img v-bind:src="[itemIn.image == null ? 'https://soydechollos.com/public/storage/users/1552005727.png' : 'public/storage/' + itemIn.image]">
+                <img v-bind:src="[itemIn.image == null ? 'https://soydechollos.com/storage/users/1552005727.png' : 'storage/' + itemIn.image]">
             </div>
             <div class="text-in-cat-son">
               @{{ itemIn['name'] }} 
@@ -53,7 +53,7 @@
       <div class="category-row">
         <div class="category-element" v-on:click="clickCategory(itemIn)" v-for="(itemIn,indexIn) in item.son_second">
             <div class="image-in-cat">
-                <img v-bind:src="[itemIn.image == null ? 'https://soydechollos.com/public/storage/users/1552005727.png' : 'public/storage/' + itemIn.image]">
+                <img v-bind:src="[itemIn.image == null ? 'https://soydechollos.com/storage/users/1552005727.png' : 'storage/' + itemIn.image]">
             </div>
             <div class="text-in-cat-son">
               @{{ itemIn['name'] }} 

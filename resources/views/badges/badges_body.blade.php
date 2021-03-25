@@ -72,7 +72,7 @@
 			<div class="bg-white px-30 py-20 rounded">
 				<div v-for="item in items" class="row" style="display: flex; border-bottom: 1px solid #e3e3e3; padding-top: 20px">
 					<div class="col-3 col-md-2" style="font-size: 3.5em; padding-right: 20px; color: #2196F3; opacity: .1;text-align: center" :class="{awarded:item.selected}">
-						<img class="w-100" :src="'/public/storage/'+item.image">
+						<img class="w-100" :src="'/storage/'+item.image">
 					</div>
 					<div class="col-9 col-md-10 pt-20">
 						<h3 :class="{unavailable: !item.selected}">@{{ item.name }}</h3>
