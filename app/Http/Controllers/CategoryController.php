@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Chollo;
-use App\User;
 use Auth;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;
-ini_set('max_execution_time', 1800);
 
 class CategoryController extends Controller
 {
@@ -141,63 +139,6 @@ class CategoryController extends Controller
         return $request->category_id;
     }
 
-    public function fixproductimages(){
-
-
-        $chollos = Chollo::all();
-
-
-        foreach ($chollos as $chollo){
-
-
-            $url1 = $chollo->image;
-            $url2 = $chollo->image_small;
-
-
-            $result = strpos($url1,"https://soydechollos.com/");
-            if($result === false) {
-
-            }else{
-                $url1 = str_replace("https://soydechollos.com/", env('APP_URL')."public/", $url1);
-                $url2 = str_replace("https://soydechollos.com/", env('APP_URL')."public/", $url2);
-
-                $chollo->image = $url1;
-                $chollo->image_small = $url2;
-                $chollo->save();
-            }
-
-        }
-
-        echo "Success";
-    }
-
-    public function fixuserimages(){
-
-
-        $users = User::all();
-
-
-        foreach ($users as $user){
-
-
-            $url1 = $user->avatar;
-
-
-            $result = strpos($url1,"https://soydechollos.com/");
-            if($result === false) {
-
-            }else{
-                $url1 = str_replace("https://soydechollos.com/", env('APP_URL')."public/", $url1);
-
-                $user->avatar = $url1;
-                $user->save();
-            }
-
-        }
-
-        echo "Success";
-    }
-
     public function poolSave(Request $request, $id)
     {
         $category = Category::findOrFail($id);
@@ -228,6 +169,16 @@ class CategoryController extends Controller
         $words = DB::table('ignore_words')->get();
 
         return view('categories.ignore', compact('words'));
+    }
+
+    public function categorizador(){
+
+        $categories = Category::all()->toArray();
+
+        $items = Chollo::all()->where('approved','=',0)->toArray();
+
+
+        return view('vendor.voyager.categorizador.index', compact('categories','items'));
     }
 
     public function ignorePoolSave(Request $request)
