@@ -2,7 +2,7 @@
 	<div class="banner">
 	    <div class="container">
 	      <div class="wrap">
-			<a href="{{$banner->link}}">
+			<a href="{{$banner->link}}">	
 	        	<img src="{{asset('/storage/'.$banner->image)}}" alt="{{$banner->name}}">
 			</a>
 	      </div>
