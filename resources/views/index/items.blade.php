@@ -86,14 +86,14 @@
           <div class="font-bold mb-5 font-13 font-lg-16">
             <a :href="cholloLink(item)" class="link-none item_link">@{{ namePreviewChollo(item.name) }}</a> 
           </div>
-          <div class="d-none d-lg-block overflow-description" v-html="descriptionPreviewChollo(item)"></div>
+          <div class="d-none d-lg-block overflow-description" v-html="item.snippet"></div>
         </div>
         <div class="info-coupon" :class="{visible_coupon:item.discount_code != null}">
-          <div class="coupon">
+          <div class="coupon" @click="copyCode(item.discount_code)">
             <div class="coupon-content overflow-coupon">
               <span class="coupon-span">@{{ item.discount_code }}</span>
             </div>
-            <span class="coupon_after" @click="copyCode(item.discount_code)"><i class="far fa-clone pr-5"></i></span>
+            <span class="coupon_after"><i class="far fa-clone pr-5"></i></span>
           </div>
 
         </div>
@@ -184,7 +184,7 @@
       </div>
   </div>
   <div v-show="loading" class="text-center">
-    <img src="{{asset('/images/svgs/loader.svg')}}">
+    <img src="/images/svgs/loader.svg">
   </div>
   @include('index.paginator')
 </div>

@@ -1,6 +1,6 @@
 <div style="max-width: 600px; margin: auto;">
 	<div style="text-align: center; background-color: #0038aa">
-		<img src="{{asset('images/logo.png')}}" style="padding: 10px">
+		<img src="https://soydechollos.com/images/logo.png" style="padding: 10px">
 	</div>
 	<div style="padding: 50px 25px; font-size: 16px">
 			Hola {{$user->name}}! 
