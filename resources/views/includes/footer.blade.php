@@ -96,9 +96,9 @@
       {{ csrf_field() }}
   </form>
 </footer>
-<script type="text/javascript" src="/js/assets.js"></script>
-<script type="text/javascript" src="/js/defer.js"></script>
-<script src="/js/custom.js?v=19"></script>
+<script type="text/javascript"  data-cfasync="false" src="{{asset('/js/assets.js')}}"></script>
+<script type="text/javascript"   data-cfasync="false" src="{{asset('/js/defer.js')}}"></script>
+<script src="{{asset('/js/custom.js?v=19')}}"></script>
 @include('common.js.facebook')
 @yield('scripts')
 @if(Session::has('success'))
