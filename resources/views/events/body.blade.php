@@ -36,7 +36,7 @@
       <div class="bg-white rounded border overflow-hidden coupon-hover">
         <div class="position-relative">
           <a :href="item.url">
-            <img :src="'/public/storage/'+item.imagen" alt="" class="w-100 d-block">
+            <img :src="'storage/'+item.imagen" alt="" class="w-100 d-block">
           </a>
           <div class="coupon-event bg-white rounded-20">
             <button v-if="item.type_id == 1" class="btn btn-small btn-orange">Evento</button>

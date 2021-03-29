@@ -1,2 +1,9 @@
 User-agent: *
-Disallow:
+Disallow: /pagina/faqs-manual-de-usuario
+Disallow: /pagina/reglas-de-publicacion-en-soy-de-chollos
+Disallow: /pagina/politica-de-cookies
+Disallow: /pagina/aviso-legal-y-condiciones-de-uso
+Disallow: /pagina/politica-privacidad
+Disallow: /pagina/condiciones-de-uso
+Disallow: /contacto
+Disallow: /api

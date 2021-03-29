@@ -361,9 +361,9 @@ class ImageController extends Controller{
 
   	private function save_image($inPath,$outPath){ 
 
-        $in= @fopen($inPath, "rb");
+        $in = @fopen(public_path($inPath), 'rb');
         if ($in !== false) {
-            $out=   fopen($outPath, "wb");
+            $out = fopen(public_path($outPath), 'wb');
             while ($chunk = fread($in,8192))
             {
                 fwrite($out, $chunk, 8192);
@@ -387,7 +387,7 @@ class ImageController extends Controller{
         		return [$image,null]; 
         	}
 
-        	$path = 'public/storage/oferta/'.$slug;
+        	$path = 'storage/oferta/'.$slug;
         	$in= @fopen($image, "rb");
         	$wa = Image::make($image);
             $width = $wa->width();
@@ -411,13 +411,13 @@ class ImageController extends Controller{
         	$path_info = pathinfo($image);
             $extensions = array('jpg', 'JPG', 'png' ,'PNG' ,'jpeg' ,'JPEG','webp');
             $download_image = false;
-            $path = 'public/storage/oferta/'.$slug;
+            $path = 'storage/oferta/'.$slug;
             
             if (isset($path_info['extension']) && in_array($path_info['extension'], $extensions)){
                 
                 $ext = $path_info['extension'];
                 $ext = strtok($ext, '?');
-                $path = 'public/storage/oferta/'.$slug.'.'.$ext;
+                $path = 'storage/oferta/'.$slug.'.'.$ext;
             
                 $download_image = $this->save_image($image,$path);
         

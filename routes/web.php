@@ -32,9 +32,6 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::post('filter', 'HomeController@filter');
 Route::get('seleccionar', 'AddController@choose');
 
-Route::get('/fixproductimages', 'CategoryController@fixproductimages');
-Route::get('/fixuserimages', 'CategoryController@fixuserimages');
-
 Route::get('categorias', 'CategoryController@index');
 Route::get('categoria/{slug}', 'HomeController@category');
 Route::get('categoria/{slug}/populares', 'HomeController@category');

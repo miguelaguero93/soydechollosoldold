@@ -336,7 +336,7 @@ var auth = new Vue({
         this.nameError = false
         this.passwordError = false
         this.termsError = false
-        this.picture = 'https://soydechollos.com/public/images/default.png';
+        this.picture = 'https://soydechollos.com/images/default.png'
         if(validateUserManualRegister(this.username,this.email,this.password,this.terms)){
           showBlanket()
           storeUser(this.username,this.email,this.picture,this.password,this.subscribed,false,'web')

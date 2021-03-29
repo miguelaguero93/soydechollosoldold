@@ -273,7 +273,7 @@ class UserController extends Controller{
                 $wa->crop($width,$width);
             }
             $filename  = 'users/'.rand().'.'.$img->getClientOriginalExtension();
-            $full_path = 'public/storage/'.$filename;
+            $full_path = 'storage/'.$filename;
             $wa->resize(100, 100)->save($full_path);
             $user->avatar = url($full_path);
             $user->save();
