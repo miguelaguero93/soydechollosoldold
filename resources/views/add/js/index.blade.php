@@ -56,6 +56,7 @@ var app = new Vue({
 				let _this = this;
                 this.resultCategories = [];
 
+
                 if(this.name.length > 0){
                     axios.post('/api/getcategory',payload).then(function(response){
 

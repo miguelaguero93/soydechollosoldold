@@ -722,7 +722,9 @@ class CategoryController extends Controller
         $isRechecked = false;
         if(empty($results)){
 
+
             $isRechecked = true;
+
             $results = self::recheck($reCheck, $categories);
 
             if(empty($results)) {
@@ -741,6 +743,7 @@ class CategoryController extends Controller
 
 
         $results = array_unique($results,SORT_REGULAR);
+
 
 
 
