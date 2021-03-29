@@ -549,9 +549,9 @@ class CholloController extends Controller
 
     private function save_image($inPath, $outPath)
     {
-        $in = @fopen($inPath, 'rb');
+        $in = @fopen(public_path($inPath), 'rb');
         if ($in !== false) {
-            $out = fopen($outPath, 'wb');
+            $out = fopen(public_path($outPath), 'wb');
             while ($chunk = fread($in, 8192)) {
                 fwrite($out, $chunk, 8192);
             }

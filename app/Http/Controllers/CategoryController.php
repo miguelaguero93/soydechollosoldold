@@ -171,16 +171,6 @@ class CategoryController extends Controller
         return view('categories.ignore', compact('words'));
     }
 
-    public function categorizador(){
-
-        $categories = Category::all()->toArray();
-
-        $items = Chollo::all()->where('approved','=',0)->toArray();
-
-
-        return view('vendor.voyager.categorizador.index', compact('categories','items'));
-    }
-
     public function ignorePoolSave(Request $request)
     {
         DB::table('ignore_words')->delete();
